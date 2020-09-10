@@ -15,3 +15,6 @@ function newFlag(Fnc){
     }
     return obj
 }
+
+let a = newFlag(Array)
+console.log(Array.isArray(a));
