@@ -5,20 +5,21 @@ Function.prototype.myApply = function myCall(){
     // console.log(thisObj,args);
     thisObj = thisObj || window
     thisObj.func = this //为thisObj添加func方法，func方法指向myCall，所以在func中的this指向thisObj
-    thisObj.func(...args)//执行函数
+    let result = thisObj.func(...args)//执行函数
     delete thisObj.func//thisObj上无func属性需要删除
-
+    return result
     // console.log(thisObj,...args);
 }
 
 let o={
     name : 'lin',
     fn:function(){
-        console.log(this.name);
+        return this.name;
     }
 }
 let obj = {
     name:'zhen'
 }
 let hh = o.fn
-hh.myApply(obj,[1,2])
+let res = hh.myApply(obj,[1,2])
+console.log(res);
