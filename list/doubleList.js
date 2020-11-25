@@ -46,6 +46,7 @@ class doubleList{
     }
     insert(index,element){
         const node = this.getNodeAt(index)
+        if(index===0 && !node) this.push(element)
         if(!node){
             return false
         }
@@ -114,6 +115,7 @@ class doubleList{
 }
 
 const doublelist = new doubleList()
+doublelist.insert(0,5)
 console.log(doublelist.toString());
 doublelist.push(1)
 doublelist.push(2)
@@ -124,7 +126,7 @@ console.log(doublelist.getNodeAt(1).element);
 
 console.log(doublelist.indexOf(2));
 
-doublelist.insert(1,5)
+doublelist.insert(0,5)
 console.log(doublelist.toString());
 
 doublelist.insert(3,6)
