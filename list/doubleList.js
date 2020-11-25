@@ -76,7 +76,7 @@ class doubleList{
             this.head.previous = null
         }else{//不是头结点
             preNode.next = removeNode.next
-            removeNode.next.previous = preNode
+            removeNode.next &&(removeNode.next.previous= preNode)//这主要是判断是不是尾结点
             removeNode.previous = removeNode.next = null
         }
         this.length--
@@ -132,7 +132,7 @@ console.log(doublelist.toString());
 doublelist.insert(3,6)
 console.log(doublelist.toString());
 
-doublelist.removeAt(0)
+doublelist.removeAt(doublelist.length-1)
 console.log(doublelist.toString());
 doublelist.remove(5)
 console.log(doublelist.toString());
