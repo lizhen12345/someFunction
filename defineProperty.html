@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    </style>
+</head>
+<body>
+    <!-- 三角形 -->
+    <div class="demo1">
+        <input id="input" type="text">
+        <p id="dom"></p>
+    </div>
+    <script>
+        const inputDom = document.getElementById('input')
+        const pDom = document.getElementById('dom')
+        // inputDom.addEventListener('input',(e)=>{
+        //     console.log(e);
+        //     pDom.innerText = e.target.value
+        // })
+        const obj = {}
+        let key =''
+
+        Object.defineProperty(obj,'key',{
+            set(newValue){
+                if(newValue === obj.key) return
+                pDom.innerText = newValue
+            },
+            get(){
+                console.log(111);
+                return key
+            }
+        })
+        inputDom.addEventListener('input',e=>{
+            obj.key = e.target.value
+        })
+
+    </script>
+</body>
+</html>
